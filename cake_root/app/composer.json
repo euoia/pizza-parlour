@@ -1,0 +1,14 @@
+{
+    "name": "euoia/pizzaparlour",
+    "description": "A simple application for ordering pizzas using CakePHP.",
+    "license": "BSD.",
+    "authors": [
+        {
+            "name": "James Pickard",
+            "email": "james.pickard+github@gmail.com"
+        }
+    ],
+    "require": {
+      "slywalker/boost_cake": "*"
+    }
+}
