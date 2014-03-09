@@ -8,6 +8,7 @@
 			Choose your toppings
 		</div>
 
+		<div class="toppingWarning">(maximum 3)</div>
 		<div id="availableToppingsList">
 		</div>
 	</div>
@@ -26,12 +27,17 @@
 	</div>
 
 	<?php
-	echo $this->Form->create('BoostCake', array(
+	echo $this->Form->create('Pizza', array(
+		'id' => 'makePizzaForm',
 		'class' => 'makePizzaForm'
 	));
 
+	echo $this->Form->hidden('topping1');
+	echo $this->Form->hidden('topping2');
+	echo $this->Form->hidden('topping3');
+
 	echo $this->Form->end(array(
-		'label' => 'place the order'
+		'label' => 'place the order',
 	));
 	?>
 </div>
@@ -46,5 +52,6 @@
 		toppings: <?php echo $this->Js->object($toppings) ?>,
 		availableToppingsList: 'availableToppingsList',
 		chosenToppingsList: 'chosenToppingsList',
+		form: 'makePizzaForm'
 	});
 </script>

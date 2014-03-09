@@ -6,20 +6,32 @@
 	float: left;
 }
 
+.availableToppingsContainer:hover {
+	cursor: pointer;
+}
+
+.disabled {
+	color: #aaa;
+}
+
+.disabled:hover {
+	cursor: initial;
+}
+
 .chosenToppingsContainer {
 	float: left;
 	text-align: right;
 	margin-left: -5em;
 }
 
+.chosenToppingsContainer:hover {
+	cursor: pointer;
+}
+
 .toppingHeader {
 	font-size : 2em;
 	font-family: serif;
 	font-weight: 400;
-}
-
-.topping:hover {
-	cursor: pointer;
 }
 
 .topping {
