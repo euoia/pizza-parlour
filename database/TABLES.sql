@@ -4,6 +4,7 @@ USE pizzaparlour;
 CREATE TABLE customers (
 	id             INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 	username       VARCHAR(255),
+	password       VARCHAR(255),
 	created        DATETIME DEFAULT NULL,
     modified       DATETIME DEFAULT NULL
 );

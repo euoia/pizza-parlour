@@ -1,9 +1,9 @@
 USE pizzaparlour;
 
-INSERT INTO customers(username) values ('Fred');
-INSERT INTO customers(username) values ('Wilma');
-INSERT INTO customers(username) values ('Pebbles');
-INSERT INTO customers(username) values ('Barney');
+INSERT INTO customers(username, password) values ('Fred', '');
+INSERT INTO customers(username, password) values ('Wilma', '');
+INSERT INTO customers(username, password) values ('Pebbles', '');
+INSERT INTO customers(username, password) values ('Barney', '');
 
 -- Just one topping.
 INSERT INTO pizzas(customer_id, topping1) values (
