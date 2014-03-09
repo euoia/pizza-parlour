@@ -37,7 +37,7 @@
 	echo $this->Form->hidden('topping3');
 
 	echo $this->Form->end(array(
-		'label' => 'place the order',
+		'label' => 'place order',
 	));
 	?>
 </div>
