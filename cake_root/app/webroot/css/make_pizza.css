@@ -1,0 +1,43 @@
+.pizzaMaker {
+	width: 61em;
+}
+
+.availableToppingsContainer {
+	float: left;
+}
+
+.chosenToppingsContainer {
+	float: left;
+	text-align: right;
+	margin-left: -5em;
+}
+
+.toppingHeader {
+	font-size : 2em;
+	font-family: serif;
+	font-weight: 400;
+}
+
+.topping:hover {
+	cursor: pointer;
+}
+
+.topping {
+	font-family: sans-serif;
+	font-size: 1.2em;
+}
+
+ul {
+	margin: 0; padding: 0;
+	list-style: none;
+}
+
+.pizza-image {
+	float: left;
+	margin-left: -7em;
+}
+
+.makePizzaForm {
+	width: 100%;
+	text-align: center;
+}
