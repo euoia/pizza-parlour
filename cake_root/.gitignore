@@ -8,7 +8,7 @@
 /build
 /dist
 /tags
-.composer.lock
+composer.lock
 
 # OS generated files #
 ######################
