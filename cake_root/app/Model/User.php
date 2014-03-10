@@ -34,6 +34,7 @@ class User extends AppModel {
             'required' => array(
                 'rule' => array('notEmpty'),
 				'rule' => array('minLength', '2'),
+				'rule' => array('maxLength', '30'),
                 'message' => 'A username is required'
             )
         ),
