@@ -16,6 +16,7 @@ Things I'd change or fix in a real project
 * I'd probably use a join table between pizzas and toppings so the limit of 3 can easily be changed
 * Add nonce to submit form to prevent the same pizza being ordered twice by mistake
 * Put orders screen behind an admin login
+* Run YSlow to identify additional performance improvements
 
 License
 ===========================================
