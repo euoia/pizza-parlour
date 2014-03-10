@@ -69,8 +69,16 @@ MakePizza.prototype.initDOM = function() {
   }.bind(this));
 
   this.dom.form.onsubmit = function() {
-    document.getElementById('PizzaTopping1').value = this.chosenToppings[0];
-    document.getElementById('PizzaTopping2').value = this.chosenToppings[1];
-    document.getElementById('PizzaTopping3').value = this.chosenToppings[2];
+    if (this.chosenToppings[0] !== undefined) {
+      document.getElementById('PizzaTopping1').value = this.chosenToppings[0];
+    }
+
+    if (this.chosenToppings[1] !== undefined) {
+      document.getElementById('PizzaTopping2').value = this.chosenToppings[1];
+    }
+
+    if (this.chosenToppings[2] !== undefined) {
+      document.getElementById('PizzaTopping3').value = this.chosenToppings[2];
+    }
   }.bind(this);
 };
