@@ -1,25 +1,5 @@
 <?php
 class PizzasController extends AppController {
-	// TODO: Move these toppings to the database.
-	private $toppings = array(
-		'bacon',
-		'cajun chicken',
-		'chorizo',
-		'honey cured ham',
-		'pepperoni',
-		'turkey',
-		'cheddar',
-		'feta',
-		'gorgonzola',
-		'monterey jack',
-		'provolone',
-		'roquefort',
-		'pistachios',
-		'pecans',
-		'pine nuts',
-		'walnuts',
-	);
-
 	public $helpers = array(
 		'Html' => array('className' => 'BoostCake.BoostCakeHtml'),
 		'Form',
@@ -35,7 +15,7 @@ class PizzasController extends AppController {
 
     public function makePizza() {
 		// Bind the toppings to diplay the pizza creator.
-		$this->set('toppings', $this->toppings);
+		$this->set('toppings', $this->Pizza->toppings);
 		$this->set('title_for_layout', 'Pizza Builder');
 
 		// request->data is empty - no more to do.
