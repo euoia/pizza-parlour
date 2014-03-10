@@ -1,6 +1,6 @@
 <!-- File: /app/View/Pizzas/index.ctp -->
 
-<h1>Blog pizzas</h1>
+<h1>List of pizza orders</h1>
 <table>
     <tr>
         <th>Id</th>
