@@ -15,8 +15,8 @@ CREATE TABLE pizzas (
 	topping1       VARCHAR(255),
 	topping2       VARCHAR(255),
 	topping3       VARCHAR(255),
-	created        DATETIME DEFAULT NULL,
-    modified       DATETIME DEFAULT NULL,
+	created        TIMESTAMP,
+    modified       TIMESTAMP,
 
 	CONSTRAINT pizzas_fk1
 		FOREIGN KEY (customer_id)
