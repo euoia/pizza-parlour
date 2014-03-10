@@ -24,7 +24,12 @@ class UsersController extends AppController {
 
 			// No user returned - create a new one.
 			if ($user === array()) {
-				$this->User->save($this->request->data);
+				$saveResult = $this->User->save($this->request->data);
+				if ($saveResult === false) {
+					$this->Session->setFlash($this->User->lastErrorMessage());
+					return;
+				}
+
 				$this->Session->setFlash(__('New account created'), 'success');
 
 				$id = $this->User->id;
@@ -41,7 +46,7 @@ class UsersController extends AppController {
 
 				if ($login === false) {
 					$this->Session->setFlash(__('Invalid password, try again'));
-					return $this->redirect($this->Auth->redirect());
+					return;
 				}
 			}
 
