@@ -43,11 +43,13 @@ class AppController extends Controller {
 				'Form' => array(
 					'fields' => array(
 						'username' => 'username',
-						'password' => 'password'
+						'password' => 'password',
 					),
 					'passwordHasher' => 'Blowfish'
 				)
-			)
+			),
+			'logoutRedirect' => '/'
         )
+
     );
 }
