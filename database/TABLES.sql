@@ -6,7 +6,9 @@ CREATE TABLE customers (
 	username       VARCHAR(255),
 	password       VARCHAR(255),
 	created        DATETIME DEFAULT NULL,
-    modified       DATETIME DEFAULT NULL
+    modified       DATETIME DEFAULT NULL,
+
+	UNIQUE(username)
 );
 
 CREATE TABLE pizzas (
