@@ -56,7 +56,7 @@ class PizzasController extends AppController {
 				array('customer_id' => $user['id']));
 
 			$this->Pizza->save($this->request->data);
-			$this->Session->setFlash($this->Pizza->success_message);
+			$this->Session->setFlash($this->Pizza->successMessage);
 		} else {
 			$this->Session->write('order', $this->request->data['Pizza']);
 
