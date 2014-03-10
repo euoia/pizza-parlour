@@ -6,8 +6,13 @@ class UsersController extends AppController {
 		'Form',
 		'Js');
 
+	public $uses = array('User', 'Pizza');
+
 	public function auth() {
-		//$this->Auth->authenticate = array('Form');
+		// User is already logged in.
+		if ($this->Auth->user()) {
+			return $this->redirect('/');
+		}
 
 		// request->data not empty, save the pizza.
 		if ($this->request->is('post')) {
@@ -29,17 +34,38 @@ class UsersController extends AppController {
 				);
 
 				$this->Auth->login($this->request->data['User']);
-				return $this->redirect('/');
+			} else {
+
+				// Try to login.
+				$login = $this->Auth->login();
+
+				if ($login === false) {
+					$this->Session->setFlash(__('Invalid password, try again'));
+					return $this->redirect($this->Auth->redirect());
+				}
 			}
 
-			// Try to login.
-			$loginResult = $this->Auth->login($this->request->data['User']);
-			if ($loginResult === false) {
-				$this->Session->setFlash(__('Invalid username or password, try again'));
-				return $this->redirect($this->Auth->redirect());
+			// If the customer has a pending order then process it.
+			$order = $this->Session->read('order');
+
+			$user = $this->Auth->user();
+			if ($order) {
+				$order = array_merge(
+					$order,
+					array('customer_id' => $user['id']));
+
+				$this->Pizza->save($order);
+				$this->Session->delete('order');
+				$this->Session->setFlash($this->Pizza->success_message);
+			} else {
+				$this->Session->setFlash(__('Successfully logged in'), 'success');
 			}
 
-			$this->Session->setFlash(__('Successfully logged in'), 'success');
+			return $this->redirect('/');
 		}
+	}
+
+	public function logout() {
+		return $this->redirect($this->Auth->logout());
 	}
 }
