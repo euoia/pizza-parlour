@@ -61,7 +61,7 @@ class UsersController extends AppController {
 
 				$this->Pizza->save($order);
 				$this->Session->delete('order');
-				$this->Session->setFlash($this->Pizza->success_message);
+				$this->Session->setFlash($this->Pizza->successMessage);
 			} else {
 				$this->Session->setFlash(__('Successfully logged in'), 'success');
 			}
