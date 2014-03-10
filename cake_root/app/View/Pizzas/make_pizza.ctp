@@ -3,6 +3,9 @@
 ?>
 
 <div class="pizzaMaker">
+	<div class="title">
+		Build Your Own Pizza
+	</div>
 	<div class="availableToppingsContainer">
 		<div class="toppingHeader">
 			Choose your toppings
