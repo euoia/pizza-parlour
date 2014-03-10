@@ -32,11 +32,14 @@ class Pizza extends AppModel {
 
 		$this->validate = array(
 		'topping1' => array(
-			'rule' => array('inList', $this->toppings)),
+			'rule' => array('inList', $this->toppings),
+			'allowEmpty' => true),
 		'topping2' => array(
-			'rule' => array('inList', $this->toppings)),
+			'rule' => array('inList', $this->toppings),
+			'allowEmpty' => true),
 		'topping3' => array(
-			'rule' => array('inList', $this->toppings))
+			'rule' => array('inList', $this->toppings),
+			'allowEmpty' => true),
 		);
 	}
 
