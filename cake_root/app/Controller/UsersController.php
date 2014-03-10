@@ -50,18 +50,25 @@ class UsersController extends AppController {
 				}
 			}
 
+			// Authenticate the user.
+			$user = $this->Auth->user();
+
 			// If the customer has a pending order then process it.
 			$order = $this->Session->read('order');
-
-			$user = $this->Auth->user();
 			if ($order) {
 				$order = array_merge(
 					$order,
 					array('customer_id' => $user['id']));
 
-				$this->Pizza->save($order);
+				// Order the pizza.
+				$pizzaSaveResult = $this->Pizza->save($order);
+				if ($pizzaSaveResult) {
+					$this->Session->setFlash($this->Pizza->successMessage, 'success');
+				} else {
+					$this->Session->setFlash(__('Something went wrong with the order.'));
+				}
+
 				$this->Session->delete('order');
-				$this->Session->setFlash($this->Pizza->successMessage);
 			} else {
 				$this->Session->setFlash(__('Successfully logged in'), 'success');
 			}
