@@ -9,14 +9,14 @@ class Pizza extends AppModel {
 
 	// TODO: Validate toppings.
 
-	public $success_message = '';
+	public $successMessage = '';
 
 	public function afterSave($created, $options = array()) {
-		$num_orders = $this->find('count', array(
+		$numOrders = $this->find('count', array(
 			'conditions' => array('customer_id' => $this->data['Pizza']['customer_id'])
 		));
 
-		$this->success_message = __(sprintf('Pizza #%d ordered.', $num_orders));
+		$this->successMessage = __(sprintf('Pizza #%d ordered.', $numOrders));
 	}
 }
 ?>
