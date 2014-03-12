@@ -18,6 +18,7 @@ Things I'd change or fix in a real project
 * Put orders screen behind an admin login
 * Run YSlow to identify additional performance improvements
 * Would not use single form for "login or signup" - it would likely be confusing for users
+* Add a non-CakePHP favicon
 
 License
 ===========================================
